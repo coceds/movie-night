@@ -1,6 +1,8 @@
 nav {
     background: linear-gradient(to right, #f27121, #e94057);
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 h1 {
@@ -8,3 +10,17 @@ h1 {
     padding: 0px;
     color: white;
 }
+
+button {
+    border: 0px;
+    font-size: 18px;
+    margin-right: 14px;
+    height: 40px;
+    width: 100px;
+    box-shadow: 5px 5px 0px black;
+    border-radius: 10px;
+    &:hover {
+        border-radius: 0px;
+    }
+}
+

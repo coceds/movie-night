@@ -12,11 +12,15 @@ import { NavbarService } from 'src/app/navbar/services/navbar.service';
 export class MovieListComponent implements OnInit {
 
   movies$: Observable<Movie[]>;
+  loadingMovies: Array<number>;
 
   constructor(private movieService: MovieService, private navbarService: NavbarService) { }
 
   ngOnInit() {
-    this.movies$ = this.movieService.getMovies();
+    this.loadingMovies = new Array(10).fill(0)
+      .map((n, index) => index);
+
+    this.movies$ = this.movieService.getMoviesFromHttp();
     this.navbarService.title.next('MovieNight');
   }
 
